@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Table Filter Example</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Table Filter Example</h1>
+</header>
+<div>
+<style>
+table {
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid gray;
+    padding: 0.25em;
+    vertical-align: top;
+}
+
+.horizontal td:first-child {
+    font-weight: bold;
+}
+
+#measurements tr td:nth-child(n + 2) {
+    text-align: right;
+}
+
+.card {
+    margin: 0.5em;
+    border: 2px solid black;
+    width: 300px;
+}
+.card table {
+    width: 100%;
+}
+.card td, .card th {
+    border: none !important;
+}
+.card td:first-child::after {
+    content: ":";
+}
+</style>
+<h2 id="vertical-table">Vertical Table</h2>
+<div id="roles" class="table">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">No.</th>
+<th>Role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>Developer</td>
+<td><ul>
+<li>Produce <em>quality</em> <code>code</code></li>
+<li>Meet deadlines</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td>Manager</td>
+<td><ul>
+<li>Coordinate developers</li>
+<li>Produce accurate reports</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Row numbers are generated.</li>
+<li>Generated table inherits block classes and ID for styling and referencing.</li>
+</ul>
+<h2 id="horizontal-tables">Horizontal Tables</h2>
+<div id="measurements" class="table horizontal">
+<table>
+<caption>Measurements</caption>
+<tbody>
+<tr class="odd">
+<td>Current, mA</td>
+<td>15</td>
+<td>16</td>
+<td>15</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>Voltage, V</td>
+<td>3,0</td>
+<td>3,1</td>
+<td>3,1</td>
+<td>3,0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl:john" class="table card horizontal">
+<table>
+<caption>Table 1: Employee 1</caption>
+<tbody>
+<tr class="odd">
+<td>Name</td>
+<td>John Doe</td>
+</tr>
+<tr class="even">
+<td>Age</td>
+<td>32</td>
+</tr>
+<tr class="odd">
+<td>Company</td>
+<td>Acme Inc.</td>
+</tr>
+<tr class="even">
+<td>Position</td>
+<td>Senior Software Developer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl:jane" class="table card horizontal">
+<table>
+<caption>Table 2: Employee 2</caption>
+<tbody>
+<tr class="odd">
+<td>Name</td>
+<td>Jane Doe</td>
+</tr>
+<tr class="even">
+<td>Age</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>Company</td>
+<td>Acme Inc.</td>
+</tr>
+<tr class="even">
+<td>Position</td>
+<td>Project Manager</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>ID is preserved for tables 1 and 2 for <code>pandoc-crossref</code>.</li>
+<li>Header cells are TD´s styled with CSS <code>:first-child</code>.</li>
+<li>Row alignment has to be defined with styles.</li>
+<li>Table template (headings, alignment, etc.) reused from document metadata.</li>
+<li>Table templates can add classes to generated tables.</li>
+</ul>
+</div>
+</body>
+</html>
